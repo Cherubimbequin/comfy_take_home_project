@@ -32,6 +32,11 @@ class RoleManager
                     return $next($request);
                 }
                 break;
+            case 'agent':
+                if ($authUserRole == 2) {
+                    return $next($request);
+                }
+                break;
         }
 
         switch ($authUserRole) {
@@ -39,6 +44,8 @@ class RoleManager
                 return redirect()->route('admin.dashboard');
             case 1:
                 return redirect()->route('dashboard');
+            case 2:
+                return redirect()->route('agent.dashboard');
         }
 
 

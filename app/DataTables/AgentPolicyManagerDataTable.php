@@ -13,7 +13,7 @@ use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 
-class PolicyManagerDataTable extends DataTable
+class AgentPolicyManagerDataTable extends DataTable
 {
     /**
      * Build the DataTable class.
@@ -26,7 +26,7 @@ class PolicyManagerDataTable extends DataTable
         ->addColumn('policy_type_id', function ($row) {
             return $row->policyType
                 ? $row->policyType->name
-                : 'No Project Found';
+                : 'No Policy Type Found';
         })
         ->editColumn('created_at', function ($row) {
             return Carbon::parse($row->created_at)
@@ -43,7 +43,12 @@ class PolicyManagerDataTable extends DataTable
                 ->locale('en')
                 ->isoFormat('MMMM Do YYYY');
         })
-            ->addColumn('action', 'policymanager.action')
+        ->addColumn('user_id', function ($row) {
+            return $row->user
+                ? $row->user->name
+                : 'No User Found';
+        })
+            // ->addColumn('action', 'adminpolicymanager.action')
             ->setRowId('id');
     }
 
@@ -52,7 +57,7 @@ class PolicyManagerDataTable extends DataTable
      */
     public function query(PolicyManager $model): QueryBuilder
     {
-        return $model->newQuery()->where('user_id', auth()->id());
+        return $model->newQuery();
     }
 
     /**
@@ -61,7 +66,7 @@ class PolicyManagerDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('policymanager-table')
+                    ->setTableId('agentpolicymanager-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Bfrtip')
@@ -83,7 +88,7 @@ class PolicyManagerDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            
+            Column::make('user_id')->title('Customer Name'),
             Column::make('policy_number'),
             Column::make('policy_type_id')->title('Policy Type'),
             Column::make('status'),
@@ -105,6 +110,6 @@ class PolicyManagerDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'PolicyManager_' . date('YmdHis');
+        return 'AgentPolicyManager_' . date('YmdHis');
     }
 }

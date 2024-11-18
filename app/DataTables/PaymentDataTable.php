@@ -2,7 +2,8 @@
 
 namespace App\DataTables;
 
-use App\Models\PolicyManager;
+use App\Models\Payment;
+use App\Models\Payments;
 use Illuminate\Support\Carbon;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
@@ -13,7 +14,7 @@ use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 
-class PolicyManagerDataTable extends DataTable
+class PaymentDataTable extends DataTable
 {
     /**
      * Build the DataTable class.
@@ -23,36 +24,38 @@ class PolicyManagerDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-        ->addColumn('policy_type_id', function ($row) {
-            return $row->policyType
-                ? $row->policyType->name
-                : 'No Project Found';
-        })
         ->editColumn('created_at', function ($row) {
             return Carbon::parse($row->created_at)
                 ->locale('en')
                 ->isoFormat('MMMM Do YYYY');
         })
-        ->editColumn('start_date', function ($row) {
-            return Carbon::parse($row->start_date)
-                ->locale('en')
-                ->isoFormat('MMMM Do YYYY');
+        ->addColumn('user_id', function ($row) {
+            return $row->user
+                ? $row->user->name
+                : 'No User Found';
         })
-        ->editColumn('end_date', function ($row) {
-            return Carbon::parse($row->end_date)
-                ->locale('en')
-                ->isoFormat('MMMM Do YYYY');
+        ->addColumn('user_id', function ($row) {
+            return $row->user
+                ? $row->user->name
+                : 'No User Found';
         })
-            ->addColumn('action', 'policymanager.action')
+        ->addColumn('policy_id', function ($row) {
+            return $row->policy
+                ? $row->policy->policy_number
+                : 'No policy Found';
+        })
+            ->addColumn('action', 'payment.action')
             ->setRowId('id');
     }
 
     /**
      * Get the query source of dataTable.
      */
-    public function query(PolicyManager $model): QueryBuilder
+    public function query(Payments $model): QueryBuilder
     {
+        // return $model->newQuery();
         return $model->newQuery()->where('user_id', auth()->id());
+
     }
 
     /**
@@ -61,7 +64,7 @@ class PolicyManagerDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('policymanager-table')
+                    ->setTableId('payment-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Bfrtip')
@@ -83,20 +86,17 @@ class PolicyManagerDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            
-            Column::make('policy_number'),
-            Column::make('policy_type_id')->title('Policy Type'),
-            Column::make('status'),
-            Column::make('premium_amount'),
-            Column::make('start_date'),
-            Column::make('end_date'),
-            Column::make('next_of_kin'),
-            Column::make('created_at'),
             // Column::computed('action')
             //       ->exportable(false)
             //       ->printable(false)
             //       ->width(60)
             //       ->addClass('text-center'),
+            Column::make('user_id')->title('Name'),
+            Column::make('policy_id')->title('Policy Number'),
+            Column::make('reference'),
+            Column::make('amount'),
+            Column::make('status'),
+            Column::make('created_at'),
         ];
     }
 
@@ -105,6 +105,6 @@ class PolicyManagerDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'PolicyManager_' . date('YmdHis');
+        return 'Payment_' . date('YmdHis');
     }
 }

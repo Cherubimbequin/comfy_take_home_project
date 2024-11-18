@@ -4,31 +4,33 @@ namespace App\Http\Controllers;
 
 use App\Models\Payments;
 use Illuminate\Http\Request;
+use App\DataTables\PaymentDataTable;
+use App\DataTables\AdminPaymentDataTable;
 
 class PaymentsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(AdminPaymentDataTable $dataTable)
     {
-        //
+        return $dataTable->render('admin.pages.Payments.index');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function index_users(PaymentDataTable $dataTable)
     {
-        //
+        return $dataTable->render('users.pages.Payments.index');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function index_agent(PaymentDataTable $dataTable)
     {
-        //
+        return $dataTable->render('agent.pages.Payments.index');
     }
 
     /**

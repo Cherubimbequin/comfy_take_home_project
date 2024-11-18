@@ -15,11 +15,17 @@ class Payments extends Model
         'reference',
         'amount',
         'status',
+        'user_id'
     ];
 
     public function policy()
     {
         return $this->belongsTo(PolicyManager::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
 }

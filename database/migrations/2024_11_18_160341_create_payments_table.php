@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('policy_id');
+            $table->foreignId('user_id');
             $table->string('reference')->unique(); 
             $table->decimal('amount', 10, 2);
             $table->enum('status', ['Pending', 'Success', 'Failed'])->default('Pending'); 

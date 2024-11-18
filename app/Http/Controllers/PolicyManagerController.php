@@ -78,6 +78,7 @@ class PolicyManagerController extends Controller
                 'reference' => $request->reference,
                 'amount' => $request->premium_amount,
                 'status' => 'Success',
+                'user_id' => auth()->id(),
             ]);
             Log::info('Payment logged successfully.');
 
