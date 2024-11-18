@@ -83,6 +83,10 @@
                                         placeholder="Email">
                                 </div>
                                 <div class="form-group">
+                                    <input type="tel" name="phone" class="form-control form-control-lg" id="phone"
+                                        placeholder="Phone">
+                                </div>
+                                <div class="form-group">
                                     <input type="password" name="password" class="form-control form-control-lg"
                                         id="password" placeholder="Password">
                                 </div>

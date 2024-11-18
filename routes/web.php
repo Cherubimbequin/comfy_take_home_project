@@ -32,7 +32,16 @@ Route::middleware(['auth', 'verified', 'roleManager:admin'])->group(function () 
     // All Bought Policies
     Route::get('/admin/all/policies', [AdminPolicyManagerController::class, 'index'])->name('admin.all.policies');
 
+    // All Payments
     Route::get('/admin/all/payments', [PaymentsController::class, 'index'])->name('admin.all.payments');
+
+    // Users
+    Route::get('/admin/users', [ProfileController::class, 'index'])->name('admin.users.all');
+    Route::get('/admin/users/create', [ProfileController::class, 'create'])->name('admin.users.create');
+    Route::delete('/admin/users/{id}', [ProfileController::class, 'destroy'])->name('admin.users.destroy');
+    Route::post('/admin/users', [ProfileController::class, 'store'])->name('admin.users.store');
+    Route::get('/admin/users/edit', [ProfileController::class, 'admin_edit'])->name('admin.users.edit');
+    Route::patch('/admin/profile', [ProfileController::class, 'admin_update'])->name('admin.profile.update');
 });
 
 Route::middleware(['auth', 'verified', 'roleManager:user'])->group(function () {
@@ -51,6 +60,9 @@ Route::middleware(['auth', 'verified', 'roleManager:user'])->group(function () {
 
     // Payments
     Route::get('/all/payments', [PaymentsController::class, 'index_users'])->name('users.all.payments');
+
+    Route::get('/profile/edit', [ProfileController::class, 'user_edit'])->name('user.profile.edit');
+    Route::patch('/user/profile', [ProfileController::class, 'update'])->name('user.profile.update');
 });
 
 Route::middleware(['auth', 'verified', 'roleManager:agent'])->group(function () {
@@ -69,14 +81,18 @@ Route::middleware(['auth', 'verified', 'roleManager:agent'])->group(function () 
 
     // Payments
     Route::get('/agent/all/payments', [PaymentsController::class, 'index_agent'])->name('agent.all.payments');
+
+    // Users
+    Route::get('/agent/profile/edit', [ProfileController::class, 'user_edit'])->name('agent.profile.edit');
+    Route::patch('/agent/profile', [ProfileController::class, 'update'])->name('agent.profile.update');
 });
 
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 require __DIR__ . '/auth.php';

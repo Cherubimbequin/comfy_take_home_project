@@ -8,9 +8,6 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Policy Type</h4>
-                            {{-- <p class="card-description">
-                Policy Type
-              </p> --}}
                             <form action="{{ route('admin.policy.types.store') }}" method="POST" class="forms-sample">
                                 @csrf
                                 <div class="form-group">

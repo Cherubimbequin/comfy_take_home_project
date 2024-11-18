@@ -28,6 +28,11 @@ class PolicyTypeDataTable extends DataTable
                     ->locale('en')
                     ->isoFormat('MMMM Do YYYY');
             })
+            ->addColumn('user_id', function ($row) {
+                return $row->user
+                    ? $row->user->name
+                    : 'No User Found';
+            })
             ->addColumn('action', function ($query) {
                 $editUrl = route('admin.policy.type.edit', $query->id);
             
@@ -62,7 +67,7 @@ class PolicyTypeDataTable extends DataTable
             ->setTableId('policytype-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->dom('lBfrtip')
+            ->dom('Bfrtip')
             ->orderBy(1)
             ->selectStyleSingle()
             ->buttons([
@@ -81,12 +86,11 @@ class PolicyTypeDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-
             Column::make('name'),
             Column::make('price'),
             Column::make('description'),
+            Column::make('user_id')->title('Created By'),
             Column::make('created_at'),
-            // Column::make('updated_at'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

@@ -41,6 +41,7 @@ class PolicyTypeController extends Controller
                 'name' => $request->name,
                 'price' => $request->price,
                 'description' => $request->description,
+                'user_id' => auth()->id(),
             ]);
 
             return redirect()->route('admin.policy.type')->with('success', 'Policy Type created successfully.');
@@ -86,6 +87,7 @@ class PolicyTypeController extends Controller
                 'name' => $request->name,
                 'price' => $request->price,
                 'description' => $request->description,
+                'user_id' => auth()->id(),
             ]);
 
             return redirect()->route('admin.policy.type')->with('success', 'Policy Type updated successfully.');
