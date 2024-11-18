@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\RoleManager;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -11,7 +12,14 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->web(append: [
+            \RealRashid\SweetAlert\ToSweetAlert::class,
+            \App\Http\Middleware\UserActivity::class,
+            // \App\Http\Middleware\LogUserActivity::class,
+        ]);
+        $middleware->alias([
+            'roleManager' => RoleManager::class
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
