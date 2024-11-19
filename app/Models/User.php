@@ -27,6 +27,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'role',
     ];
 
+
+    public function policies()
+    {
+        return $this->hasMany(PolicyManager::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

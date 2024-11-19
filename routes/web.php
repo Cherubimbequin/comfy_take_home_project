@@ -51,11 +51,11 @@ Route::middleware(['auth', 'verified', 'roleManager:user'])->group(function () {
     Route::get('/policy', [PolicyManagerController::class, 'index'])->name('all.policy.user');
     Route::get('/all/policies', [PolicyManagerController::class, 'show'])->name('show.policy.user');
     Route::get('/policy/buy/{id}', [PolicyManagerController::class, 'create'])->name('policy.buy');
-    Route::post('/policies', [PolicyManagerController::class, 'store'])->name('policy.store');
-    Route::get('/policies/{id}', [PolicyManagerController::class, 'show'])->name('policy.show');
-    Route::get('/policies/{id}/edit', [PolicyManagerController::class, 'edit'])->name('policy.edit');
-    Route::put('/policies/{id}', [PolicyManagerController::class, 'update'])->name('policy.update');
-    Route::delete('/policies/{id}', [PolicyManagerController::class, 'destroy'])->name('policy.destroy');
+    Route::post('/policy/store', [PolicyManagerController::class, 'store'])->name('policy.store');
+    Route::get('/policy/{id}', [PolicyManagerController::class, 'show'])->name('policy.show');
+    Route::get('/policy/{id}/edit', [PolicyManagerController::class, 'edit'])->name('policy.edit');
+    Route::put('/policy/{id}', [PolicyManagerController::class, 'update'])->name('policy.update');
+    Route::delete('/policy/{id}', [PolicyManagerController::class, 'destroy'])->name('policy.destroy');
 
     // Payments
     Route::get('/all/payments', [PaymentsController::class, 'index_users'])->name('users.all.payments');
