@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class AgentDashboardController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('agent.index');
     }
 }

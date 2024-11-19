@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class AdminPolicyManagerController extends Controller
 {
-    public function index(AdminPolicyManagerDataTable $dataTable){
+    public function index(AdminPolicyManagerDataTable $dataTable)
+    {
         return $dataTable->render('admin.pages.policyManager.index');
     }
 }

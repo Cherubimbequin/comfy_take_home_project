@@ -57,7 +57,6 @@ Route::middleware(['auth', 'verified', 'roleManager:user'])->group(function () {
     Route::put('/policies/{id}', [PolicyManagerController::class, 'update'])->name('policy.update');
     Route::delete('/policies/{id}', [PolicyManagerController::class, 'destroy'])->name('policy.destroy');
 
-
     // Payments
     Route::get('/all/payments', [PaymentsController::class, 'index_users'])->name('users.all.payments');
 
@@ -86,13 +85,5 @@ Route::middleware(['auth', 'verified', 'roleManager:agent'])->group(function () 
     Route::get('/agent/profile/edit', [ProfileController::class, 'user_edit'])->name('agent.profile.edit');
     Route::patch('/agent/profile', [ProfileController::class, 'update'])->name('agent.profile.update');
 });
-
-
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
 
 require __DIR__ . '/auth.php';

@@ -97,14 +97,14 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         $user = auth()->user();
-    
+
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . $user->id,
             'phone' => 'nullable|string|max:15|unique:users,phone,' . $user->id,
-            'password' => 'nullable|string|min:8|confirmed', 
+            'password' => 'nullable|string|min:8|confirmed',
         ]);
-    
+
         try {
             $user->update([
                 'name' => $request->name,
@@ -112,14 +112,14 @@ class ProfileController extends Controller
                 'phone' => $request->phone,
                 'password' => $request->password ? bcrypt($request->password) : $user->password,
             ]);
-    
+
             return redirect()->route('user.profile.edit')->with('success', 'Profile updated successfully.');
         } catch (\Exception $e) {
             Log::error('Error updating profile: ' . $e->getMessage());
             return redirect()->back()->with('error', 'An error occurred while updating your profile.');
         }
     }
-    
+
 
     /**
      * Delete the user's account.

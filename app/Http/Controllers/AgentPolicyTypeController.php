@@ -29,7 +29,7 @@ class AgentPolicyTypeController extends Controller
     {
         $request->validate([
             'name' => 'required|unique:policy_types,name|max:255',
-            'price' => 'required|numeric|min:0', 
+            'price' => 'required|numeric|min:0',
             'description' => 'nullable|string|max:1000',
         ]);
 
@@ -41,7 +41,7 @@ class AgentPolicyTypeController extends Controller
                 'user_id' => auth()->id(),
             ]);
 
-            return redirect()->route('admin.policy.type')->with('success', 'Policy Type created successfully.');
+            return redirect()->route('agent.policy.type')->with('success', 'Policy Type created successfully.');
         } catch (\Exception $e) {
             Log::error('Error creating policy type: ' . $e->getMessage());
             return redirect()->back()->with('error', 'An error occurred while creating the Policy Type. Please try again.');
@@ -86,7 +86,7 @@ class AgentPolicyTypeController extends Controller
                 'description' => $request->description,
             ]);
 
-            return redirect()->route('admin.policy.type')->with('success', 'Policy Type updated successfully.');
+            return redirect()->route('agent.policy.type')->with('success', 'Policy Type updated successfully.');
         } catch (\Exception $e) {
             Log::error('Error updating policy type (ID: ' . $id . '): ' . $e->getMessage());
             return redirect()->back()->with('error', 'An error occurred while updating the Policy Type. Please try again.');

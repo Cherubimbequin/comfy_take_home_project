@@ -15,7 +15,13 @@ class Payments extends Model
         'reference',
         'amount',
         'status',
-        'user_id'
+        'user_id',
+        'channel',
+        'currency',
+        'mobile_money_number',
+        'payer_ip_address',
+        'paid_at'
+
     ];
 
     public function policy()

@@ -15,9 +15,14 @@ return new class extends Migration
             $table->id();
             $table->foreignId('policy_id');
             $table->foreignId('user_id');
-            $table->string('reference')->unique(); 
+            $table->string('reference')->unique();
+            $table->string('channel')->nullable();
+            $table->string('currency')->nullable();
             $table->decimal('amount', 10, 2);
-            $table->enum('status', ['Pending', 'Success', 'Failed'])->default('Pending'); 
+            $table->string('mobile_money_number')->nullable();
+            $table->enum('status', ['Pending', 'Success', 'Failed'])->default('Pending');
+            $table->timestamp('paid_at')->nullable();
+            $table->string('payer_ip_address')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -32,7 +32,7 @@ class PolicyTypeController extends Controller
     {
         $request->validate([
             'name' => 'required|unique:policy_types,name|max:255',
-            'price' => 'required|numeric|min:0', 
+            'price' => 'required|numeric|min:0',
             'description' => 'nullable|string|max:1000',
         ]);
 
