@@ -64,7 +64,6 @@
 
     <!-- Paystack Inline Script -->
     <script src="https://js.paystack.co/v1/inline.js"></script>
-
     <script>
         function showCheckoutModal() {
             // Get form values
