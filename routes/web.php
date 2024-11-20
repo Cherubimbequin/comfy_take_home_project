@@ -11,12 +11,17 @@ use App\Http\Controllers\PolicyManagerController;
 use App\Http\Controllers\PolicyTypeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskManagerController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    // return view('welcome');
-    return view('auth.login');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+//     return view('auth.login');
+// });
+
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+Route::post('/contact', [WelcomeController::class, 'send'])->name('contact.send');
+
 
 Route::middleware(['auth', 'verified', 'roleManager:admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
@@ -33,7 +38,7 @@ Route::middleware(['auth', 'verified', 'roleManager:admin'])->group(function () 
     Route::get('/admin/all/policies', [AdminPolicyManagerController::class, 'index'])->name('admin.all.policies');
 
     // All Payments
-    Route::get('/admin/all/payments', [PaymentsController::class, 'index'])->name('admin.all.payments');
+    Route::get('/admin/all/transactions', [PaymentsController::class, 'index'])->name('admin.all.payments');
 
     // Users
     Route::get('/admin/users', [ProfileController::class, 'index'])->name('admin.users.all');
@@ -58,7 +63,7 @@ Route::middleware(['auth', 'verified', 'roleManager:user'])->group(function () {
     Route::delete('/policy/{id}', [PolicyManagerController::class, 'destroy'])->name('policy.destroy');
 
     // Payments
-    Route::get('/all/payments', [PaymentsController::class, 'index_users'])->name('users.all.payments');
+    Route::get('/all/transactions', [PaymentsController::class, 'index_users'])->name('users.all.payments');
 
     Route::get('/profile/edit', [ProfileController::class, 'user_edit'])->name('user.profile.edit');
     Route::patch('/user/profile', [ProfileController::class, 'update'])->name('user.profile.update');
@@ -79,7 +84,7 @@ Route::middleware(['auth', 'verified', 'roleManager:agent'])->group(function () 
     Route::get('/agent/all/policies', [AgentPolicyManagerController::class, 'index'])->name('agent.all.policies');
 
     // Payments
-    Route::get('/agent/all/payments', [PaymentsController::class, 'index_agent'])->name('agent.all.payments');
+    Route::get('/agent/all/transactions', [PaymentsController::class, 'index_agent'])->name('agent.all.payments');
 
     // Users
     Route::get('/agent/profile/edit', [ProfileController::class, 'user_edit'])->name('agent.profile.edit');

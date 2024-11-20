@@ -24,8 +24,8 @@ class PaymentDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-        ->editColumn('created_at', function ($row) {
-            return Carbon::parse($row->created_at)
+        ->editColumn('paid_at', function ($row) {
+            return Carbon::parse($row->paid_at)
                 ->locale('en')
                 ->isoFormat('MMMM Do YYYY');
         })
@@ -93,10 +93,13 @@ class PaymentDataTable extends DataTable
             //       ->addClass('text-center'),
             Column::make('user_id')->title('Name'),
             Column::make('policy_id')->title('Policy Number'),
+            Column::make('currency'),
+            Column::make('mobile_money_number'),
+            Column::make('channel'),
             Column::make('reference'),
             Column::make('amount'),
             Column::make('status'),
-            Column::make('created_at'),
+            Column::make('paid_at'),
         ];
     }
 

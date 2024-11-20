@@ -1,176 +1,1095 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Laravel</title>
+<head>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <title>The Insurance People</title>
 
-        <!-- Styles / Scripts -->
-        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-            @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @else
-            <style>
-                /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.absolute{position:absolute}.relative{position:relative}.-left-20{left:-5rem}.top-0{top:0px}.-bottom-16{bottom:-4rem}.-left-16{left:-4rem}.-mx-3{margin-left:-0.75rem;margin-right:-0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16 / 9}.size-12{width:3rem;height:3rem}.size-5{width:1.25rem;height:1.25rem}.size-6{width:1.5rem;height:1.5rem}.h-12{height:3rem}.h-40{height:10rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-\[calc\(100\%\+8rem\)\]{width:calc(100% + 8rem)}.w-auto{width:auto}.max-w-\[877px\]{max-width:877px}.max-w-2xl{max-width:42rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.self-center{align-self:center}.overflow-hidden{overflow:hidden}.rounded-\[10px\]{border-radius:10px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-sm{border-radius:0.125rem}.bg-\[\#FF2D20\]\/10{background-color:rgb(255 45 32 / 0.1)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.from-transparent{--tw-gradient-from:transparent var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-white{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-white{--tw-gradient-to:#fff var(--tw-gradient-to-position)}.stroke-\[\#FF2D20\]{stroke:#FF2D20}.object-cover{object-fit:cover}.object-top{object-position:top}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.pt-3{padding-top:0.75rem}.text-center{text-align:center}.font-sans{font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-sm\/relaxed{font-size:0.875rem;line-height:1.625}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-semibold{font-weight:600}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-\[0px_14px_34px_0px_rgba\(0\2c 0\2c 0\2c 0\.08\)\]{--tw-shadow:0px 14px 34px 0px rgba(0,0,0,0.08);--tw-shadow-colored:0px 14px 34px 0px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-transparent{--tw-ring-color:transparent}.ring-white\/\[0\.05\]{--tw-ring-color:rgb(255 255 255 / 0.05)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.06\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.25\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.25));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.selection\:bg-\[\#FF2D20\] *::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-\[\#FF2D20\]::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-black:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.hover\:text-black\/70:hover{color:rgb(0 0 0 / 0.7)}.hover\:ring-black\/20:hover{--tw-ring-color:rgb(0 0 0 / 0.2)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus-visible\:ring-1:focus-visible{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}@media (min-width: 640px){.sm\:size-16{width:4rem;height:4rem}.sm\:size-6{width:1.5rem;height:1.5rem}.sm\:pt-5{padding-top:1.25rem}}@media (min-width: 768px){.md\:row-span-3{grid-row:span 3 / span 3}}@media (min-width: 1024px){.lg\:col-start-2{grid-column-start:2}.lg\:h-16{height:4rem}.lg\:max-w-7xl{max-width:80rem}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:flex-col{flex-direction:column}.lg\:items-end{align-items:flex-end}.lg\:justify-center{justify-content:center}.lg\:gap-8{gap:2rem}.lg\:p-10{padding:2.5rem}.lg\:pb-10{padding-bottom:2.5rem}.lg\:pt-0{padding-top:0px}.lg\:text-\[\#FF2D20\]{--tw-text-opacity:1;color:rgb(255 45 32 / var(--tw-text-opacity))}}@media (prefers-color-scheme: dark){.dark\:block{display:block}.dark\:hidden{display:none}.dark\:bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}.dark\:bg-zinc-900{--tw-bg-opacity:1;background-color:rgb(24 24 27 / var(--tw-bg-opacity))}.dark\:via-zinc-900{--tw-gradient-to:rgb(24 24 27 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #18181b var(--tw-gradient-via-position), var(--tw-gradient-to)}.dark\:to-zinc-900{--tw-gradient-to:#18181b var(--tw-gradient-to-position)}.dark\:text-white\/50{color:rgb(255 255 255 / 0.5)}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:text-white\/70{color:rgb(255 255 255 / 0.7)}.dark\:ring-zinc-800{--tw-ring-opacity:1;--tw-ring-color:rgb(39 39 42 / var(--tw-ring-opacity))}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:hover\:text-white\/70:hover{color:rgb(255 255 255 / 0.7)}.dark\:hover\:text-white\/80:hover{color:rgb(255 255 255 / 0.8)}.dark\:hover\:ring-zinc-700:hover{--tw-ring-opacity:1;--tw-ring-color:rgb(63 63 70 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-white:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity))}}
-            </style>
-        @endif
-    </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" alt="Laravel background" />
-            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
-                        <div class="flex lg:justify-center lg:col-start-2">
-                            <svg class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="currentColor"/></svg>
-                        </div>
-                        @if (Route::has('login'))
-                            <nav class="-mx-3 flex flex-1 justify-end">
-                                @auth
-                                    <a
-                                        href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Dashboard
-                                    </a>
-                                @else
-                                    <a
-                                        href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Log in
-                                    </a>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="W">
+    <meta name="description" content="The Insurance People">
 
-                                    @if (Route::has('register'))
-                                        <a
-                                            href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                        >
-                                            Register
-                                        </a>
-                                    @endif
-                                @endauth
-                            </nav>
-                        @endif
-                    </header>
+    <!-- Dark mode -->
+    <script>
+        const storedTheme = localStorage.getItem('theme')
 
-                    <main class="mt-6">
-                        <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
-                            <a
-                                href="https://laravel.com/docs"
-                                id="docs-card"
-                                class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-light.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden"
-                                        onerror="
-                                            document.getElementById('screenshot-container').classList.add('!hidden');
-                                            document.getElementById('docs-card').classList.add('!row-span-1');
-                                            document.getElementById('docs-card-content').classList.add('!flex-row');
-                                            document.getElementById('background').classList.add('!hidden');
-                                        "
-                                    />
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-dark.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block"
-                                    />
-                                    <div
-                                        class="absolute -bottom-16 -left-16 h-40 w-[calc(100%+8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900"
-                                    ></div>
+        const getPreferredTheme = () => {
+            if (storedTheme) {
+                return storedTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+        }
+
+        const setTheme = function(theme) {
+            if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-bs-theme', 'dark')
+            } else {
+                document.documentElement.setAttribute('data-bs-theme', theme)
+            }
+        }
+
+        setTheme(getPreferredTheme())
+
+        window.addEventListener('DOMContentLoaded', () => {
+            var el = document.querySelector('.theme-icon-active');
+            if (el != 'undefined' && el != null) {
+                const showActiveTheme = theme => {
+                    const activeThemeIcon = document.querySelector('.theme-icon-active use')
+                    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+                    const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+                    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                        element.classList.remove('active')
+                    })
+
+                    btnToActive.classList.add('active')
+                    activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+                }
+
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                    if (storedTheme !== 'light' || storedTheme !== 'dark') {
+                        setTheme(getPreferredTheme())
+                    }
+                })
+
+                showActiveTheme(getPreferredTheme())
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', () => {
+                            const theme = toggle.getAttribute('data-bs-theme-value')
+                            localStorage.setItem('theme', theme)
+                            setTheme(theme)
+                            showActiveTheme(theme)
+                        })
+                    })
+
+            }
+        })
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/glightbox/css/glightbox.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Header START -->
+    <header class="header-sticky header-absolute">
+        <!-- Nav START -->
+        <nav class="navbar navbar-expand-xl">
+            <div class="container">
+                <!-- Logo START -->
+                <a class="navbar-brand me-0" href="index.html">
+                    <img class="light-mode-item navbar-brand-item" src="{{ asset('assets/images/logo.svg') }}"
+                        alt="logo">
+                    <img class="dark-mode-item navbar-brand-item" src="{{ asset('assets/images/logo-light.svg') }}"
+                        alt="logo">
+                </a>
+                <!-- Logo END -->
+
+                <!-- Main navbar START -->
+                <div class="navbar-collapse collapse" id="navbarCollapse">
+                    <ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
+
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('welcome')}}">Home</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#about">About Us</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#contact">Contact us</a> </li>
+                    </ul>
+                </div>
+                <!-- Main navbar END -->
+
+                <!-- Buttons -->
+                <ul class="nav align-items-center dropdown-hover ms-sm-2">
+                    <!-- Dark mode option START -->
+                    <li class="nav-item dropdown dropdown-animation">
+                        <button class="btn btn-link text-warning mb-0 px-2 lh-1" id="bs-theme" type="button"
+                            aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                class="bi bi-circle-half theme-icon-active fill-mode fa-fw" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+                                <use href="#"></use>
+                            </svg>
+                        </button>
+
+                        <ul class="dropdown-menu min-w-auto dropdown-menu-lg-end" aria-labelledby="bs-theme">
+                            <li class="mb-1">
+                                <button type="button" class="dropdown-item d-flex align-items-center"
+                                    data-bs-theme-value="light">
+                                    <svg width="16" height="16" fill="currentColor"
+                                        class="bi bi-brightness-high-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+                                        <path
+                                            d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
+                                        </path>
+                                        <use href="#"></use>
+                                    </svg>Light
+                                </button>
+                            </li>
+                            <li class="mb-1">
+                                <button type="button" class="dropdown-item d-flex align-items-center active"
+                                    data-bs-theme-value="dark">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-moon-stars-fill fa-fw mode-switch me-1"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z">
+                                        </path>
+                                        <path
+                                            d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
+                                        </path>
+                                        <use href="#"></use>
+                                    </svg>Dark
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center"
+                                    data-bs-theme-value="auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-circle-half fa-fw mode-switch me-1"
+                                        viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+                                        <use href="#"></use>
+                                    </svg>Auto
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Dark mode option END -->
+
+                    <!-- Sign up button -->
+                    <li class="nav-item me-2">
+                        <a href="{{ route('register') }}" class="btn btn-sm btn-light mb-0"><i
+                                class="bi bi-person-circle me-1"></i>Sign up</a>
+                    </li>
+
+                    <!-- Buy now button -->
+                    <li class="nav-item d-none d-sm-block">
+                        <a href="{{ route('register') }}" class="btn btn-sm btn-primary mb-0">Buy now!</a>
+                    </li>
+
+                    <!-- Responsive navbar toggler -->
+                    <li class="nav-item">
+                        <button class="navbar-toggler ms-sm-3 p-2" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-animation">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+        <!-- Nav END -->
+    </header>
+    <!-- Header END -->
+
+    <!-- **************** MAIN CONTENT START **************** -->
+    <main>
+
+        <!-- =======================
+Main Banner START -->
+        <section class="pt-xl-8 pb-0 position-relative">
+            <!-- background pattern -->
+            <div class="position-absolute top-0 start-50 translate-middle-x mt-8">
+                <img src="assets/images/elements/bg-pattern-5.png" alt="">
+            </div>
+
+            <div class="container pt-5 position-relative">
+                <!-- Title and contents -->
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <!-- Pre info -->
+                        <span class="heading-color fw-semibold">Trusted by happy customers</span>
+                        {{-- <ul class="avatar-group mb-0 align-items-center justify-content-center mt-2">
+					<li class="avatar avatar-xs">
+						<img class="avatar-img rounded-circle" src="assets/images/avatar/06.jpg" alt="avatar">
+					</li>
+					<li class="avatar avatar-xs">
+						<img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg" alt="avatar">
+					</li>
+					<li class="avatar avatar-xs">
+						<img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt="avatar">
+					</li>
+					<li class="avatar avatar-xs">
+						<img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar">
+					</li>
+					<li class="avatar avatar-xs">
+						<img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg" alt="avatar">
+					</li>
+				</ul> --}}
+
+                        <!-- Title -->
+                        <h1 class="my-4">Empower your <span class="text-primary">finances</span> for a brighter
+                            tomorrow</h1>
+                        <p class="mb-5">Whether you're planning for retirement, investing in your future, or seeking
+                            expert advice, our team is here to provide tailored solutions to meet your unique needs.</p>
+
+                        <!-- Button -->
+                        {{-- <div class="d-flex gap-1 gap-sm-3 flex-wrap justify-content-center">
+                            <a class="btn btn-lg btn-primary" href="#"><i
+                                    class="bi bi-telephone-fill me-2"></i>Book a call</a>
+                            <button class="btn btn-lg btn-light border" type="button">Start Your Journey</button>
+                        </div> --}}
+                    </div>
+                    <!-- Image -->
+                    <div class="col-12 mt-6 mt-xl-8">
+                        <img src="assets/images/bg/11.jpg" class="rounded" alt="">
+                    </div>
+
+                </div>
+
+                <!-- Card and images -->
+                <div class="row g-4 justify-content-between align-items-center mt-5 mt-md-7 pt-2 d-none">
+                    <!-- Image -->
+                    <div class="col-md-6 col-lg-3 order-2">
+                        <img src="assets/images/about/19.jpg" class="rounded" alt="">
+                    </div>
+
+                    <!-- Finance card -->
+                    <div class="col-md-6 col-lg-5 order-1 order-md-2">
+                        <div class="card card-body bg-dark overflow-hidden p-4" data-bs-theme="dark">
+                            <!-- Decoration -->
+                            <figure class="position-absolute bottom-0 start-0 mb-n7">
+                                <svg opacity="0.05" width="235" height="201" viewBox="0 0 235 201"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.205078 64.3935C15.4403 56.5767 32.7667 52.1455 51.039 52.1455C112.826 52.1455 182.914 122.233 182.914 184.02C182.914 189.596 182.465 195.123 181.669 200.5H233.812C234.31 195.073 234.559 189.547 234.559 184.02C234.559 82.6509 152.408 0.5 51.039 0.5C33.4139 0.5 16.3365 2.98942 0.205078 7.66953V64.3935Z"
+                                        fill="#fff" />
+                                </svg>
+                            </figure>
+                            <!-- name and img -->
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h6 class="mb-0 text-primary">Mizzle bank</h6>
+                                <img src="assets/images/elements/mastercard.svg" class="w-40px" alt="">
+                            </div>
+                            <!-- Chip image -->
+                            <img src="assets/images/elements/Chip.html" class="w-50px mb-7" alt="">
+
+                            <!-- Account and Valid date -->
+                            <div class="d-flex justify-content-between mt-3">
+                                <!-- Account number -->
+                                <div>
+                                    <span class="text-light small">Account number</span>
+                                    <h4 class="mb-0">**** **** **** 7899</h4>
                                 </div>
 
-                                <div class="relative flex items-center gap-6 lg:items-end">
-                                    <div id="docs-card-content" class="flex items-start gap-6 lg:flex-col">
-                                        <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                            <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#FF2D20" d="M23 4a1 1 0 0 0-1.447-.894L12.224 7.77a.5.5 0 0 1-.448 0L2.447 3.106A1 1 0 0 0 1 4v13.382a1.99 1.99 0 0 0 1.105 1.79l9.448 4.728c.14.065.293.1.447.1.154-.005.306-.04.447-.105l9.453-4.724a1.99 1.99 0 0 0 1.1-1.789V4ZM3 6.023a.25.25 0 0 1 .362-.223l7.5 3.75a.251.251 0 0 1 .138.223v11.2a.25.25 0 0 1-.362.224l-7.5-3.75a.25.25 0 0 1-.138-.22V6.023Zm18 11.2a.25.25 0 0 1-.138.224l-7.5 3.75a.249.249 0 0 1-.329-.099.249.249 0 0 1-.033-.12V9.772a.251.251 0 0 1 .138-.224l7.5-3.75a.25.25 0 0 1 .362.224v11.2Z"/><path fill="#FF2D20" d="m3.55 1.893 8 4.048a1.008 1.008 0 0 0 .9 0l8-4.048a1 1 0 0 0-.9-1.785l-7.322 3.706a.506.506 0 0 1-.452 0L4.454.108a1 1 0 0 0-.9 1.785H3.55Z"/></svg>
-                                        </div>
-
-                                        <div class="pt-3 sm:pt-5 lg:pt-0">
-                                            <h2 class="text-xl font-semibold text-black dark:text-white">Documentation</h2>
-
-                                            <p class="mt-4 text-sm/relaxed">
-                                                Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <svg class="size-6 shrink-0 stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                                </div>
-                            </a>
-
-                            <a
-                                href="https://laracasts.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M24 8.25a.5.5 0 0 0-.5-.5H.5a.5.5 0 0 0-.5.5v12a2.5 2.5 0 0 0 2.5 2.5h19a2.5 2.5 0 0 0 2.5-2.5v-12Zm-7.765 5.868a1.221 1.221 0 0 1 0 2.264l-6.626 2.776A1.153 1.153 0 0 1 8 18.123v-5.746a1.151 1.151 0 0 1 1.609-1.035l6.626 2.776ZM19.564 1.677a.25.25 0 0 0-.177-.427H15.6a.106.106 0 0 0-.072.03l-4.54 4.543a.25.25 0 0 0 .177.427h3.783c.027 0 .054-.01.073-.03l4.543-4.543ZM22.071 1.318a.047.047 0 0 0-.045.013l-4.492 4.492a.249.249 0 0 0 .038.385.25.25 0 0 0 .14.042h5.784a.5.5 0 0 0 .5-.5v-2a2.5 2.5 0 0 0-1.925-2.432ZM13.014 1.677a.25.25 0 0 0-.178-.427H9.101a.106.106 0 0 0-.073.03l-4.54 4.543a.25.25 0 0 0 .177.427H8.4a.106.106 0 0 0 .073-.03l4.54-4.543ZM6.513 1.677a.25.25 0 0 0-.177-.427H2.5A2.5 2.5 0 0 0 0 3.75v2a.5.5 0 0 0 .5.5h1.4a.106.106 0 0 0 .073-.03l4.54-4.543Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laracasts</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <a
-                                href="https://laravel-news.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M8.75 4.5H5.5c-.69 0-1.25.56-1.25 1.25v4.75c0 .69.56 1.25 1.25 1.25h3.25c.69 0 1.25-.56 1.25-1.25V5.75c0-.69-.56-1.25-1.25-1.25Z"/><path d="M24 10a3 3 0 0 0-3-3h-2V2.5a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2V20a3.5 3.5 0 0 0 3.5 3.5h17A3.5 3.5 0 0 0 24 20V10ZM3.5 21.5A1.5 1.5 0 0 1 2 20V3a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v17c0 .295.037.588.11.874a.5.5 0 0 1-.484.625L3.5 21.5ZM22 20a1.5 1.5 0 1 1-3 0V9.5a.5.5 0 0 1 .5-.5H21a1 1 0 0 1 1 1v10Z"/><path d="M12.751 6.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 7.3v-.5a.75.75 0 0 1 .751-.753ZM12.751 10.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 11.3v-.5a.75.75 0 0 1 .751-.753ZM4.751 14.047h10a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-10A.75.75 0 0 1 4 15.3v-.5a.75.75 0 0 1 .751-.753ZM4.75 18.047h7.5a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-7.5A.75.75 0 0 1 4 19.3v-.5a.75.75 0 0 1 .75-.753Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laravel News</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <g fill="#FF2D20">
-                                            <path
-                                                d="M16.597 12.635a.247.247 0 0 0-.08-.237 2.234 2.234 0 0 1-.769-1.68c.001-.195.03-.39.084-.578a.25.25 0 0 0-.09-.267 8.8 8.8 0 0 0-4.826-1.66.25.25 0 0 0-.268.181 2.5 2.5 0 0 1-2.4 1.824.045.045 0 0 0-.045.037 12.255 12.255 0 0 0-.093 3.86.251.251 0 0 0 .208.214c2.22.366 4.367 1.08 6.362 2.118a.252.252 0 0 0 .32-.079 10.09 10.09 0 0 0 1.597-3.733ZM13.616 17.968a.25.25 0 0 0-.063-.407A19.697 19.697 0 0 0 8.91 15.98a.25.25 0 0 0-.287.325c.151.455.334.898.548 1.328.437.827.981 1.594 1.619 2.28a.249.249 0 0 0 .32.044 29.13 29.13 0 0 0 2.506-1.99ZM6.303 14.105a.25.25 0 0 0 .265-.274 13.048 13.048 0 0 1 .205-4.045.062.062 0 0 0-.022-.07 2.5 2.5 0 0 1-.777-.982.25.25 0 0 0-.271-.149 11 11 0 0 0-5.6 2.815.255.255 0 0 0-.075.163c-.008.135-.02.27-.02.406.002.8.084 1.598.246 2.381a.25.25 0 0 0 .303.193 19.924 19.924 0 0 1 5.746-.438ZM9.228 20.914a.25.25 0 0 0 .1-.393 11.53 11.53 0 0 1-1.5-2.22 12.238 12.238 0 0 1-.91-2.465.248.248 0 0 0-.22-.187 18.876 18.876 0 0 0-5.69.33.249.249 0 0 0-.179.336c.838 2.142 2.272 4 4.132 5.353a.254.254 0 0 0 .15.048c1.41-.01 2.807-.282 4.117-.802ZM18.93 12.957l-.005-.008a.25.25 0 0 0-.268-.082 2.21 2.21 0 0 1-.41.081.25.25 0 0 0-.217.2c-.582 2.66-2.127 5.35-5.75 7.843a.248.248 0 0 0-.09.299.25.25 0 0 0 .065.091 28.703 28.703 0 0 0 2.662 2.12.246.246 0 0 0 .209.037c2.579-.701 4.85-2.242 6.456-4.378a.25.25 0 0 0 .048-.189 13.51 13.51 0 0 0-2.7-6.014ZM5.702 7.058a.254.254 0 0 0 .2-.165A2.488 2.488 0 0 1 7.98 5.245a.093.093 0 0 0 .078-.062 19.734 19.734 0 0 1 3.055-4.74.25.25 0 0 0-.21-.41 12.009 12.009 0 0 0-10.4 8.558.25.25 0 0 0 .373.281 12.912 12.912 0 0 1 4.826-1.814ZM10.773 22.052a.25.25 0 0 0-.28-.046c-.758.356-1.55.635-2.365.833a.25.25 0 0 0-.022.48c1.252.43 2.568.65 3.893.65.1 0 .2 0 .3-.008a.25.25 0 0 0 .147-.444c-.526-.424-1.1-.917-1.673-1.465ZM18.744 8.436a.249.249 0 0 0 .15.228 2.246 2.246 0 0 1 1.352 2.054c0 .337-.08.67-.23.972a.25.25 0 0 0 .042.28l.007.009a15.016 15.016 0 0 1 2.52 4.6.25.25 0 0 0 .37.132.25.25 0 0 0 .096-.114c.623-1.464.944-3.039.945-4.63a12.005 12.005 0 0 0-5.78-10.258.25.25 0 0 0-.373.274c.547 2.109.85 4.274.901 6.453ZM9.61 5.38a.25.25 0 0 0 .08.31c.34.24.616.561.8.935a.25.25 0 0 0 .3.127.631.631 0 0 1 .206-.034c2.054.078 4.036.772 5.69 1.991a.251.251 0 0 0 .267.024c.046-.024.093-.047.141-.067a.25.25 0 0 0 .151-.23A29.98 29.98 0 0 0 15.957.764a.25.25 0 0 0-.16-.164 11.924 11.924 0 0 0-2.21-.518.252.252 0 0 0-.215.076A22.456 22.456 0 0 0 9.61 5.38Z"
-                                            />
-                                        </g>
-                                    </svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Vibrant Ecosystem</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white dark:focus-visible:ring-[#FF2D20]">Forge</a>, <a href="https://vapor.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Vapor</a>, <a href="https://nova.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Nova</a>, <a href="https://envoyer.io" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Envoyer</a>, and <a href="https://herd.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Herd</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Echo</a>, <a href="https://laravel.com/docs/horizon" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Telescope</a>, and more.
-                                    </p>
+                                <!-- Account number -->
+                                <div class="text-end">
+                                    <span class="text-light small">Valid date</span>
+                                    <h5 class="mb-0">29/05</h5>
                                 </div>
                             </div>
                         </div>
-                    </main>
+                    </div>
 
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </footer>
+                    <!-- Chart image -->
+                    <div class="col-md-6 col-lg-3 d-none d-lg-block order-md-3">
+                        <img src="assets/images/elements/saas-decoration/24.png" class="rounded shadow"
+                            alt="">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- =======================
+Main Banner END -->
+
+        <!-- =======================
+Rating START -->
+        <Section class="pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-10 mx-auto">
+                        <div class="rounded border bg-light p-4 p-lg-5">
+                            <div class="row g-4">
+                                <!-- Apple rating -->
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center">
+                                        <!-- Icon -->
+                                        <img src="assets/images/elements/apple.svg" class="icon-lg" alt="">
+
+                                        <!-- Content -->
+                                        <div class="ms-2">
+                                            <!-- Rating -->
+                                            <ul class="list-inline mb-0">
+                                                <li class="list-inline-item me-0"><i
+                                                        class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item me-0"><i
+                                                        class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item me-0"><i
+                                                        class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item me-0"><i
+                                                        class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item me-0"><i
+                                                        class="fas fa-star-half-alt text-warning"></i></li>
+                                            </ul>
+                                            <span>4.8 stars on apple store</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Google rating -->
+                                <div class="col-md-4 border-end">
+                                    <div class="d-flex align-items-center">
+                                        <!-- Icon -->
+                                        <img src="assets/images/elements/gicon.svg" class="icon-lg" alt="">
+
+                                        <!-- Content -->
+                                        <div class="ms-2">
+                                            <!-- Rating -->
+                                            <ul class="list-inline mb-0">
+                                                <li class="list-inline-item me-0"><i
+                                                        class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item me-0"><i
+                                                        class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item me-0"><i
+                                                        class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item me-0"><i
+                                                        class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item me-0"><i
+                                                        class="fas fa-star-half-alt text-warning"></i></li>
+                                            </ul>
+                                            <span>4.8 stars on Google store</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <h6>8,000+ satisfied customers</h6>
+                                    <a class="icon-link icon-link-hover" href="#">See all reviews<i
+                                            class="bi bi-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Section>
+        <!-- =======================
+Rating END -->
+
+        <!-- =======================
+Service START -->
+        <Section id="about"  class="pb-0">
+            <div class="container">
+
+                <!-- Title -->
+                <div class="row mb-4 mb-md-6">
+                    <div class="col-md-6">
+                        <h2 class="mb-0">Tailored solutions for your financial needs</h2>
+                    </div>
+
+                    <div class="col-md-4 ms-auto">
+                        <p>We offer a comprehensive range of financial services designed to address your specific goals
+                            and aspirations. </p>
+
+                        <!-- Slider arrow -->
+                        <div class="d-flex gap-3 position-relative mt-3">
+                            <a href="#"
+                                class="btn btn-dark btn-icon rounded-circle mb-0 swiper-button-prev-team"><i
+                                    class="bi bi-arrow-left"></i></a>
+                            <a href="#"
+                                class="btn btn-dark btn-icon rounded-circle mb-0 swiper-button-next-team"><i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service box START -->
+                <div class="swiper mt-2 mt-md-4"
+                    data-swiper-options='{
+			"spaceBetween": 40,
+			"loop": false,
+			"navigation":{
+				"nextEl":".swiper-button-next-team",
+				"prevEl":".swiper-button-prev-team"
+			},
+			"breakpoints": { 
+				"768": {"slidesPerView": 2},
+				"992": {"slidesPerView": 2},
+				"1200": {"slidesPerView": 3}
+			}}'>
+
+                    <div class="swiper-wrapper">
+                        <!-- Service item -->
+                        <div class="swiper-slide">
+                            <div class="card border p-4">
+                                <!-- Card header -->
+                                <div class="card-header bg-transparent p-0 pb-4">
+                                    <figure class="text-primary">
+                                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M2.25 12C2.25 17.3848 6.61522 21.75 12 21.75C16.567 21.75 20.4006 18.6099 21.4597 14.371C21.6257 13.7068 21.7086 13.3746 21.5327 13.0378C21.4825 12.9418 21.3914 12.8252 21.3104 12.7532C21.0263 12.5009 20.6322 12.5009 19.844 12.5009H13.3C12.5501 12.5009 12.1751 12.5009 11.9122 12.3099C11.8273 12.2482 11.7527 12.1736 11.691 12.0887C11.5 11.8258 11.5 11.4508 11.5 10.7009V4.15582C11.5 3.36765 11.5 2.97356 11.2477 2.68947C11.1758 2.60848 11.0591 2.51736 10.9631 2.4672C10.6263 2.29125 10.2942 2.37418 9.63002 2.54005C5.39056 3.59874 2.25 7.43262 2.25 12Z"
+                                                fill="currentColor" fill-opacity="0.25"></path>
+                                            <path
+                                                d="M12.8 9.4V4.25994C12.8 3.42978 12.8 3.0147 13.0698 2.72637C13.1465 2.64435 13.2702 2.55404 13.3717 2.50592C13.7284 2.33679 14.0733 2.44702 14.7632 2.6675C17.8775 3.66283 20.3372 6.12259 21.3326 9.23688C21.553 9.92672 21.6633 10.2716 21.4941 10.6284C21.446 10.7299 21.3557 10.8536 21.2737 10.9303C20.9853 11.2 20.5703 11.2 19.7401 11.2H14.6C13.8501 11.2 13.4751 11.2 13.2123 11.009C13.1274 10.9473 13.0527 10.8727 12.991 10.7878C12.8 10.5249 12.8 10.1499 12.8 9.4Z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </figure>
+                                </div>
+
+                                <!-- Card body -->
+                                <div class="card-body p-0">
+                                    <!-- Title and desc -->
+                                    <h5>Financial planning</h5>
+
+                                    <!-- List -->
+                                    <ul class="list-group list-group-borderless mb-5">
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Personalized Financial Assessment
+                                        </li>
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Customized Goal Setting</li>
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Tailored Financial Roadmap</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Card footer -->
+                                <div class="card-footer bg-transparent p-0">
+                                    <a class="icon-link icon-link-hover stretched-link" href="#">Know more<i
+                                            class="bi bi-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service item -->
+                        <div class="swiper-slide">
+                            <div class="card border p-4">
+                                <!-- Card header -->
+                                <div class="card-header bg-transparent p-0 pb-4">
+                                    <figure class="text-primary">
+                                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8 18V15M12 13V18M16 18V11M6.5 11.5L7.9646 9.7913C8.91547 8.68195 10.3837 8.16067 11.8212 8.42204V8.42204C13.812 8.78401 15.8538 8.14622 17.2846 6.71542L17.5 6.5"
+                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path
+                                                d="M13.2 2.25H10.8C7.23775 2.25 5.45663 2.25 4.20802 3.15717C3.80477 3.45015 3.45015 3.80477 3.15717 4.20802C2.25 5.45663 2.25 7.23775 2.25 10.8V13.2C2.25 16.7622 2.25 18.5434 3.15717 19.792C3.45015 20.1952 3.80477 20.5499 4.20802 20.8428C5.45663 21.75 7.23775 21.75 10.8 21.75H13.2C16.7622 21.75 18.5434 21.75 19.792 20.8428C20.1952 20.5499 20.5499 20.1952 20.8428 19.792C21.75 18.5434 21.75 16.7622 21.75 13.2V10.8C21.75 7.23775 21.75 5.45663 20.8428 4.20802C20.5499 3.80477 20.1952 3.45015 19.792 3.15717C18.5434 2.25 16.7622 2.25 13.2 2.25Z"
+                                                fill="currentColor" fill-opacity="0.25"></path>
+                                        </svg>
+                                    </figure>
+                                </div>
+
+                                <!-- Card body -->
+                                <div class="card-body p-0">
+                                    <!-- Title and desc -->
+                                    <h5>Retirement planning</h5>
+
+                                    <!-- List -->
+                                    <ul class="list-group list-group-borderless mb-5">
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Income and Expense Analysis</li>
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Tailored Investment Strategy</li>
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Retirement Goal Setting</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Card footer -->
+                                <div class="card-footer bg-transparent p-0">
+                                    <a class="icon-link icon-link-hover stretched-link" href="#">Know more<i
+                                            class="bi bi-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service item -->
+                        <div class="swiper-slide">
+                            <div class="card border p-4">
+                                <!-- Card header -->
+                                <div class="card-header bg-transparent p-0 pb-4">
+                                    <figure class="text-primary">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.0729 6.64442C16.9491 5.41176 20.8136 4.6875 25.0003 4.6875C29.1871 4.6875 33.0516 5.41176 35.9278 6.64442C37.3631 7.25956 38.6245 8.03216 39.5497 8.96966C40.4816 9.91388 41.1462 11.1087 41.1462 12.5V14.4432C40.5602 14.7678 39.8947 15.082 39.1514 15.3793C35.6079 16.7967 30.6054 17.7083 25.0003 17.7083C19.3953 17.7083 14.3928 16.7967 10.8492 15.3793C10.106 15.082 9.44045 14.7678 8.85449 14.4432V12.5C8.85449 11.1087 9.51905 9.91388 10.4509 8.96966C11.3762 8.03216 12.6375 7.25956 14.0729 6.64442Z"
+                                                fill="currentColor" fill-opacity="0.18" />
+                                            <path
+                                                d="M8.85449 17.9286V23.2973C9.44045 23.622 10.106 23.9362 10.8492 24.2335C14.3928 25.6509 19.3953 26.5625 25.0003 26.5625C30.6054 26.5625 35.6079 25.6509 39.1514 24.2335C39.8947 23.9362 40.5602 23.622 41.1462 23.2973V17.9286C40.8741 18.0499 40.5958 18.1673 40.312 18.2808C36.3154 19.8795 30.9012 20.8333 25.0003 20.8333C19.0995 20.8333 13.6853 19.8795 9.68864 18.2808C9.40482 18.1673 9.12658 18.0499 8.85449 17.9286Z"
+                                                fill="currentColor" fill-opacity="0.18" />
+                                            <path
+                                                d="M8.85449 32.1515V26.7828C9.12658 26.904 9.40482 27.0214 9.68864 27.135C13.6853 28.7336 19.0995 29.6875 25.0003 29.6875C30.9012 29.6875 36.3154 28.7336 40.312 27.135C40.5958 27.0214 40.8741 26.904 41.1462 26.7828V32.1515C40.5602 32.4762 39.8947 32.7904 39.1514 33.0876C35.6079 34.5051 30.6054 35.4167 25.0003 35.4167C19.3953 35.4167 14.3928 34.5051 10.8492 33.0876C10.106 32.7904 9.44045 32.4762 8.85449 32.1515Z"
+                                                fill="currentColor" fill-opacity="0.18" />
+                                            <path
+                                                d="M8.85449 35.6369V37.5C8.85449 38.8913 9.51905 40.0861 10.4509 41.0303C11.3762 41.9678 12.6375 42.7404 14.0729 43.3556C16.9491 44.5882 20.8136 45.3125 25.0003 45.3125C29.1871 45.3125 33.0516 44.5882 35.9278 43.3556C37.3631 42.7404 38.6245 41.9678 39.5497 41.0303C40.4816 40.0861 41.1462 38.8913 41.1462 37.5V35.6369C40.8741 35.7582 40.5958 35.8756 40.312 35.9891C36.3154 37.5878 30.9012 38.5417 25.0003 38.5417C19.0995 38.5417 13.6853 37.5878 9.68864 35.9891C9.40482 35.8756 9.12658 35.7582 8.85449 35.6369Z"
+                                                fill="currentColor" fill-opacity="0.18" />
+                                            <path
+                                                d="M14.0729 6.64442C16.9491 5.41176 20.8136 4.6875 25.0003 4.6875C29.1871 4.6875 33.0516 5.41176 35.9278 6.64442C37.3631 7.25956 38.6245 8.03216 39.5497 8.96966C40.4816 9.91388 41.1462 11.1087 41.1462 12.5V14.4432C40.5602 14.7678 39.8947 15.082 39.1514 15.3793C35.6079 16.7967 30.6054 17.7083 25.0003 17.7083C19.3953 17.7083 14.3928 16.7967 10.8492 15.3793C10.106 15.082 9.44045 14.7678 8.85449 14.4432V12.5C8.85449 11.1087 9.51905 9.91388 10.4509 8.96966C11.3762 8.03216 12.6375 7.25956 14.0729 6.64442Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </figure>
+                                </div>
+
+                                <!-- Card body -->
+                                <div class="card-body p-0">
+                                    <!-- Title and desc -->
+                                    <h5>Tax planning and optimization</h5>
+
+                                    <!-- List -->
+                                    <ul class="list-group list-group-borderless mb-5">
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Strategic Tax Planning Strategies
+                                        </li>
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Tax-Efficient Investment Guidance
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Card footer -->
+                                <div class="card-footer bg-transparent p-0">
+                                    <a class="icon-link icon-link-hover stretched-link" href="#">Know more<i
+                                            class="bi bi-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service item -->
+                        <div class="swiper-slide">
+                            <div class="card border p-4">
+                                <!-- Card header -->
+                                <div class="card-header bg-transparent p-0 pb-4">
+                                    <figure class="text-primary">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12.5 19.792V36.9795M20.8333 19.792V36.9795M29.1667 19.792V36.9795M37.5 19.792V36.9795"
+                                                stroke="currentColor" stroke-width="3.125" stroke-linejoin="round" />
+                                            <path
+                                                d="M9.17947 36.9787C8.36251 36.9787 7.95402 36.9787 7.61704 37.1524C7.50671 37.2093 7.40355 37.2792 7.30975 37.3605C7.02325 37.6088 6.87154 37.9881 6.56813 38.7466L5.4848 41.455C4.86852 42.9956 4.56039 43.766 4.8107 44.358C4.8901 44.5458 5.00551 44.7162 5.15039 44.8597C5.6071 45.312 6.43678 45.312 8.09614 45.312H41.9036C43.5629 45.312 44.3926 45.312 44.8493 44.8597C44.9942 44.7162 45.1096 44.5458 45.189 44.358C45.4393 43.766 45.1312 42.9956 44.5149 41.455L43.4316 38.7466C43.1281 37.9881 42.9764 37.6088 42.6899 37.3605C42.5961 37.2792 42.493 37.2093 42.3827 37.1524C42.0457 36.9787 41.6372 36.9787 40.8202 36.9787H9.17947Z"
+                                                fill="currentColor" fill-opacity="0.18" />
+                                            <path
+                                                d="M26.4469 4.77471C25.822 4.39977 25.5095 4.2123 25.1684 4.17528C25.0564 4.16313 24.9433 4.16313 24.8313 4.17528C24.4902 4.2123 24.1777 4.39977 23.5528 4.77471L7.23239 14.567C4.14084 16.4219 2.59506 17.3494 2.60409 18.2444C2.60684 18.5169 2.6808 18.7839 2.81863 19.019C3.2714 19.7912 5.07406 19.7912 8.6794 19.7912H41.3203C44.9256 19.7912 46.7283 19.7912 47.1811 19.019C47.3189 18.7839 47.3929 18.5169 47.3956 18.2444C47.4046 17.3494 45.8589 16.4219 42.7673 14.567L26.4469 4.77471Z"
+                                                fill="currentColor" fill-opacity="0.18" />
+                                        </svg>
+                                    </figure>
+                                </div>
+
+                                <!-- Card body -->
+                                <div class="card-body p-0">
+                                    <!-- Title and desc -->
+                                    <h5>Estate planning</h5>
+
+                                    <!-- List -->
+                                    <ul class="list-group list-group-borderless mb-5">
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Wills and Trusts</li>
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Asset Protection Strategies</li>
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Succession Planning</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Card footer -->
+                                <div class="card-footer bg-transparent p-0">
+                                    <a class="icon-link icon-link-hover stretched-link" href="#">Know more<i
+                                            class="bi bi-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service item -->
+                        <div class="swiper-slide">
+                            <div class="card border p-4">
+                                <!-- Card header -->
+                                <div class="card-header bg-transparent p-0 pb-4">
+                                    <figure class="text-primary">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M25 45.3127C36.2183 45.3127 45.3125 36.2185 45.3125 25.0002C45.3125 13.782 36.2183 4.68774 25 4.68774C13.7817 4.68774 4.6875 13.782 4.6875 25.0002C4.6875 36.2185 13.7817 45.3127 25 45.3127Z"
+                                                fill="currentColor" fill-opacity="0.18" />
+                                            <path
+                                                d="M30.2087 20.8337V20.8337C30.2087 18.5325 28.3432 16.667 26.042 16.667H25.0003M25.0003 16.667H23.9587C21.6575 16.667 19.792 18.5325 19.792 20.8337V20.8337C19.792 23.1348 21.6575 25.0003 23.9587 25.0003H25.0003M25.0003 16.667V13.542M25.0003 16.667V25.0003M25.0003 25.0003H26.042C28.3432 25.0003 30.2087 26.8658 30.2087 29.167V29.167C30.2087 31.4682 28.3432 33.3337 26.042 33.3337H25.0003M25.0003 25.0003V33.3337M25.0003 33.3337H23.9587C21.6575 33.3337 19.792 31.4682 19.792 29.167V29.167M25.0003 33.3337V36.4587"
+                                                stroke="currentColor" stroke-width="3.125" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </figure>
+                                </div>
+
+                                <!-- Card body -->
+                                <div class="card-body p-0">
+                                    <!-- Title and desc -->
+                                    <h5>Management and insurance</h5>
+
+                                    <!-- List -->
+                                    <ul class="list-group list-group-borderless mb-5">
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Risk Assessment and Analysis</li>
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Customized Insurance</li>
+                                        <li class="list-group-item pb-0 d-flex mb-0"><i
+                                                class="bi bi-patch-check me-2"></i>Claims Management Support</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Card footer -->
+                                <div class="card-footer bg-transparent p-0">
+                                    <a class="icon-link icon-link-hover stretched-link" href="#">Know more<i
+                                            class="bi bi-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service box END -->
+            </div>
+        </Section>
+        <!-- =======================
+Service END -->
+
+        <!-- =======================
+About START -->
+        <Section class="pb-0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Image and decoration -->
+                    <div class="col-lg-6 col-xl-5">
+                        <div class="position-relative mb-5 mb-lg-0">
+                            <!-- Image -->
+                            <img src="assets/images/about/19.jpg" class="rounded" alt="">
+
+                            <!-- Decoration -->
+                            <div
+                                class="bg-body rounded-pill d-flex align-items-center gap-3 position-absolute top-0 start-0 p-2 m-4">
+                                <!-- Avatar -->
+                                <div class="avatar flex-shrink-0">
+                                    <img class="avatar-img rounded-circle" src="assets/images/avatar/08.jpg"
+                                        alt="avatar">
+                                </div>
+                                <!-- Text -->
+                                <div class="me-3">
+                                    <h6 class="mb-0">Dennis Barrett</h6>
+                                    <p class="mb-0 small">Ceo and manager of Blogzine</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="col-lg-6 ms-auto">
+                        <h2 class="mb-4">Empowering financial futures together</h2>
+                        <p class="mb-4"> With a commitment to integrity, expertise, and personalized service, we
+                            strive to build lasting relationships based on trust and mutual success.</p>
+                        <a href="about-v1.html" class="btn btn-dark mb-0">Know more about us</a>
+                        <!-- Divider -->
+                        <hr class="my-5 my-xl-7">
+
+                        <!-- Counter -->
+                        <div class="d-flex flex-wrap gap-4 gap-xl-7">
+                            <div>
+                                <h3 class="mb-0">99<span class="text-primary">%</span></h3>
+                                <p>Client satisfaction</p>
+                            </div>
+
+                            <div>
+                                <h3 class="mb-0">1.5<span class="text-primary">x</span></h3>
+                                <p>Company growth</p>
+                            </div>
+
+                            <div>
+                                <h3 class="mb-0">120<span class="text-primary">+</span></h3>
+                                <p>Weekly new users</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Section>
+        <!-- =======================
+About END -->
+
+        <!-- =======================
+Why us START -->
+        <Section class="pb-0">
+            <div class="container">
+                <div class="bg-light rounded position-relative p-4 p-sm-7 overflow-hidden">
+                    <!-- Decoration -->
+                    <figure class="position-absolute top-100 start-100 translate-middle mt-n8 ms-n5">
+                        <svg class="text-primary opacity-2" width="510" height="500" viewBox="0 0 510 500"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M309.5 317.5C309.5 377.619 259.646 426.375 198.125 426.375C136.604 426.375 86.75 377.619 86.75 317.5C86.75 257.381 136.604 208.625 198.125 208.625C259.646 208.625 309.5 257.381 309.5 317.5Z"
+                                stroke="currentColor" />
+                            <path
+                                d="M380.125 300C380.125 391.185 304.389 465.125 210.938 465.125C117.486 465.125 41.75 391.185 41.75 300C41.75 208.815 117.486 134.875 210.938 134.875C304.389 134.875 380.125 208.815 380.125 300Z"
+                                stroke="currentColor" />
+                            <path
+                                d="M508.875 250C508.875 387.786 395.08 499.5 254.688 499.5C114.295 499.5 0.5 387.786 0.5 250C0.5 112.214 114.295 0.5 254.688 0.5C395.08 0.5 508.875 112.214 508.875 250Z"
+                                stroke="currentColor" />
+                        </svg>
+                    </figure>
+
+                    <div class="row position-relative">
+                        <!-- Feature list -->
+                        <div class="col-lg-6 h-100 order-2">
+                            <!-- Features -->
+                            <div class="row g-4 g-lg-6">
+                                <!-- Item -->
+                                <div class="col-sm-6">
+                                    <!-- Icon -->
+                                    <div class="icon-lg bg-body heading-color border rounded-circle mb-3">
+                                        <i class="bi bi-rocket-takeoff fa-lg"></i>
+                                    </div>
+                                    <h6>Personalized approach</h6>
+                                    <p class="mb-0">Receive tailored financial solutions your needs and goals.</p>
+                                </div>
+
+                                <!-- Item -->
+                                <div class="col-sm-6">
+                                    <!-- Icon -->
+                                    <div class="icon-lg bg-body heading-color border rounded-circle mb-3">
+                                        <i class="bi bi-gem fa-lg"></i>
+                                    </div>
+                                    <h6>Expert guidance</h6>
+                                    <p class="mb-0">Benefit from the expertise of seasoned a deep understanding.</p>
+                                </div>
+
+                                <!-- Item -->
+                                <div class="col-sm-6">
+                                    <!-- Icon -->
+                                    <div class="icon-lg bg-body heading-color border rounded-circle mb-3">
+                                        <i class="bi bi-cup-straw fa-lg"></i>
+                                    </div>
+                                    <h6>Client-centric focus</h6>
+                                    <p class="mb-0">Enjoy exceptional service focused long-term relationships.</p>
+                                </div>
+
+                                <!-- Item -->
+                                <div class="col-sm-6">
+                                    <!-- Icon -->
+                                    <div class="icon-lg bg-body heading-color border rounded-circle mb-3">
+                                        <i class="bi bi-bug fa-lg"></i>
+                                    </div>
+                                    <h6>Comprehensive solutions</h6>
+                                    <p class="mb-0">Access a wide range of services under one investment </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="col-lg-5 ms-auto order-1 order-lg-2 mb-6 mb-lg-0">
+                            <div class="h-100 d-flex flex-column">
+                                <h2 class="mb-4">Choose us for your financial journey</h2>
+                                <!-- Button -->
+                                <div class="mt-auto">
+                                    <a class="btn btn-primary" href="https://www.youtube.com/embed/tXHviS-4ygo"
+                                        data-glightbox="" data-gallery="course-video"><i
+                                            class="bi bi-play-fill fa-xl me-2"></i>Watch demo video</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Section>
+        <!-- =======================
+Why us END -->
+
+        <!-- =======================
+Growth & client START -->
+        <Section>
+            <div class="inner-container mx-auto text-center">
+                <h4 class="my-4 fw-semibold">Witness your business flourish and sparkle</h4>
+                <p class="w-75 mx-auto mb-4">With our expert guidance and support, you can watch your business bloom
+                    and glow, achieving new heights of success and radiating prosperity.</p>
+                <a class="btn btn-lg btn-dark icon-link icon-link-hover" href="#">Calculate growth<i
+                        class="bi bi-arrow-right"></i> </a>
+
+                <!-- Clients -->
+                <div class="position-relative my-6 w-75 mx-auto">
+                    <hr>
+                    <p
+                        class="position-absolute heading-color fw-semibold top-50 start-50 translate-middle bg-body px-4">
+                        Our Investors</p>
+                </div>
+
+
+                <!-- Slider START -->
+                <div class="swiper"
+                    data-swiper-options='{
+			"slidesPerView": 2, 
+			"spaceBetween": 50,
+			"breakpoints": { 
+				"576": {"slidesPerView": 4}, 
+				"992": {"slidesPerView": 4}, 
+				"1200": {"slidesPerView": 5}
+			}}'>
+
+                    <!-- Slider items -->
+                    <div class="swiper-wrapper align-items-center">
+                        <!-- Image -->
+                        <div class="swiper-slide">
+                            <img src="assets/images/client/01.svg" class="grayscale" alt="client-img">
+                        </div>
+                        <!-- Image -->
+                        <div class="swiper-slide">
+                            <img src="assets/images/client/02.svg" class="grayscale" alt="client-img">
+                        </div>
+                        <!-- Image -->
+                        <div class="swiper-slide">
+                            <img src="assets/images/client/03.svg" class="grayscale" alt="client-img">
+                        </div>
+                        <!-- Image -->
+                        <div class="swiper-slide">
+                            <img src="assets/images/client/04.svg" class="grayscale" alt="client-img">
+                        </div>
+                        <!-- Image -->
+                        <div class="swiper-slide">
+                            <img src="assets/images/client/05.svg" class="grayscale" alt="client-img">
+                        </div>
+                        <!-- Image -->
+                        <div class="swiper-slide">
+                            <img src="assets/images/client/01.svg" class="grayscale" alt="client-img">
+                        </div>
+                    </div>
+                </div>
+                <!-- Slider END -->
+            </div>
+        </Section>
+        <!-- =======================
+Growth & client END -->
+
+      
+
+        <!-- =======================
+Contact form START -->
+        <section id="contact"  class="pt-0">
+            <div class="container">
+
+                <!-- Title -->
+                <div class="inner-container-small mx-auto">
+                    <div class="text-center mb-6">
+                        <h2 class="mb-">We've been waiting for you</h2>
+                        <p class="mb-0">Buy your Insurance from use.</p>
+                    </div>
+                </div>
+
+                <!-- Form and pricing -->
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <!-- Contact form START -->
+						<form class="row g-4" action="{{ route('contact.send') }}" method="POST">
+							@csrf
+							<div class="col-md-6">
+								<label class="form-label heading-color">Your name *</label>
+								<input type="text" class="form-control form-control-lg" name="name" placeholder="Full name" required>
+							</div>
+						
+							<div class="col-md-6">
+								<label class="form-label heading-color">Email address *</label>
+								<input type="email" class="form-control form-control-lg" name="email" placeholder="name@example.com" required>
+							</div>
+						
+							<div class="col-md-6">
+								<label class="form-label heading-color">Phone number *</label>
+								<input type="text" class="form-control form-control-lg" name="phone" placeholder="(xxx) xx xxxx" required>
+							</div>
+						
+							<div class="col-md-6">
+								<label class="form-label heading-color">Company *</label>
+								<input type="text" class="form-control form-control-lg" name="company" placeholder="Company name">
+							</div>
+						
+							<div class="col-12">
+								<label class="form-label heading-color">Message *</label>
+								<textarea class="form-control" name="message" placeholder="Write your message here...." style="height: 150px" required></textarea>
+							</div>
+						
+							<div class="col-12 d-grid">
+								<button type="submit" class="btn btn-lg btn-primary mb-0">Send a message</button>
+							</div>
+						</form>
+						
+                        <!-- Contact form END -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =======================
+Contact form START -->
+
+    </main>
+    <!-- **************** MAIN CONTENT END **************** -->
+
+    <!-- =======================
+Footer START -->
+    <footer class="bg-dark position-relative overflow-hidden pt-6" data-bs-theme="dark">
+
+        <!-- SVG decoration -->
+        <figure class="position-absolute top-0 start-0 mt-n8 ms-n9">
+            <svg class="fill-mode" width="775px" height="834px" viewBox="0 0 775 834"
+                style="enable-background:new 0 0 775 834; opacity: 0.05;" xml:space="preserve">
+                <path
+                    d="M486.1,564.4c-3.6,2.5-7.4,4.8-11.3,6.4c-12,5.5-25.7,7.9-42.2,7.4c-30.6-1.1-65.6-12.5-102.8-24.4 c-50.7-16.2-103.3-33.4-152.5-27c-56.1,7.2-97.9,44.4-128,114l-0.4-0.2c67.5-156.1,181-119.5,281.1-87.1c37,12,72,23.2,102.5,24.3 c34.3,1.2,58.1-10.7,74.9-37.4C530.1,505,547.1,466,565,425.1C619.4,301,675.6,172.7,892.1,141.3l0.1,0.4 c-216.2,31.4-272.5,159.5-326.8,283.5c-18.1,41.1-35,79.7-57.7,115.6C501.6,550.7,494.5,558.5,486.1,564.4z">
+                </path>
+                <path
+                    d="M500.9,551.4c-43.7,31-103,15.8-165.5-0.2c-49.9-12.7-101.5-25.8-148.7-16.7c-53.3,10.5-93.2,49-121.6,118 l-0.5-0.1c15.3-37.1,33.3-64.7,55.1-84.7c19.5-17.7,41.3-28.6,66.7-33.7c47.4-9.2,99,3.9,148.9,16.6 c70.4,17.9,137.1,34.9,181.3-14.4c35.7-39.9,57.3-91.7,80.2-146.7c23.8-56.7,48.2-115.5,90.2-163.6c22.7-25.9,48.4-46.4,78.4-62.4 c33.9-18.1,72.2-30.3,117.1-37.1l0.1,0.4C695,155.3,645.2,274.5,597.1,389.7c-22.9,55-44.5,106.8-80.4,146.8 C512.3,542.4,506.6,547.3,500.9,551.4z">
+                </path>
+                <path
+                    d="M521.3,536.4c-21.9,15.5-48.4,23.4-80.8,23.8c-31.2,0.5-65.1-5.8-97.9-11.9c-49.3-9.2-100.2-18.7-145.7-6.5 c-51.1,13.7-88.9,53.7-116,122.6l-0.6-0.2c60.5-154.1,163.3-135,262.6-116.5c68.1,12.7,132.6,24.6,183.6-15.8 c48.1-38.2,71.1-100.6,95.6-166.5c20.3-55,41.4-111.6,78.3-158.1c20-25.1,42.7-44.9,69.2-60.5c30.1-17.5,64.2-29.1,104.3-35.4 l0.2,0.6c-167.2,26.3-210,141.9-251.4,253.5C598.3,431.5,575,493.8,527,532.2C525.1,533.8,523.2,535.1,521.3,536.4z">
+                </path>
+                <path
+                    d="M548.9,520.3c-4,2.9-8.2,5.6-12.6,8c-56.6,31.5-120.9,23.8-183,16.6c-51.7-6-100.4-11.8-144.6,3.2 c-49.9,16.9-85.5,57.7-111.3,128.2l-0.6-0.2c13.7-37.3,30.1-66,49.9-87.8c17.8-19.4,37.9-32.8,61.8-40.9 c44.3-15,93.1-9.3,144.9-3.2c62.1,7.2,126.3,14.8,182.8-16.6c59.6-33.2,82-104.7,105.9-180.4c17.1-54.3,34.7-110.5,67.2-156.6 c36.7-52,87.8-82.8,155.7-94l0.2,0.6c-151.9,25-187.8,139.3-222.3,250C620.4,417.6,599.4,484.5,548.9,520.3z">
+                </path>
+                <path
+                    d="M573.5,509.5c-8.2,5.8-17.4,10.7-27.7,14.6c-59.3,22-119.1,18.8-176.8,15.8c-53.2-2.8-103.3-5.3-147.1,12.5 C172.6,572.3,138.1,615.5,113,688l-0.5-0.1c25.1-72.7,59.6-115.9,108.9-136c44-18,94.2-15.3,147.6-12.6 c57.7,3,117.4,6.1,176.6-15.9c70.7-26.2,91.1-106.3,112.8-191.4c13.9-54.5,28.3-111,56.7-156.9C747,123.2,793,92.6,855.6,82l0,0.7 C716.3,106.5,687,221.4,658.9,332.2C640.4,405,622.6,474.4,573.5,509.5z">
+                </path>
+                <path
+                    d="M595.2,502.3c-11.3,8-24.6,14-40,17.4c-56.8,12.7-112,12.7-160.5,12.9c-60.2,0.1-112,0.2-157,21.1 c-49.5,23-84,69.3-108.5,146l-0.6-0.2c24.3-76.7,58.9-123.1,108.6-146.3c45.1-21.1,97.2-21.1,157.4-21.2 c48.6,0,103.6-0.1,160.5-12.9c81.6-18.3,99-106.7,117.4-200.6c10.7-55,22-112,46.6-158.2C747,108,788.6,77.5,846.5,67.2l0.1,0.8 C718,91.2,695.2,206.9,673.2,318.9C658.3,394.9,643.8,467.8,595.2,502.3z">
+                </path>
+                <path
+                    d="M615.3,497.4c-13.7,9.7-30.2,16-50.8,18c-44.4,4.6-86.5,5.8-123.6,6.8c-71.2,2-132.8,3.7-182,27.7 C206,575.6,169.8,627,145,711.3l-0.8-0.1c13-44.6,29-79.3,48.6-106.3c18.1-24.9,39.5-43.1,65.6-55.7 c49.5-24.1,110.9-25.8,182.4-27.7c37.1-1,79.3-2.2,123.5-6.7c92.6-9.4,106.2-106.5,120.5-209.2c7.8-55.9,15.9-113.6,37-160 c23.8-52.7,61.6-83.1,115.3-93.4l0.3,0.7c-53.4,10.1-91,40.4-114.6,92.9c-21.1,46.4-29.2,104.1-36.8,159.9 C674.6,386,663.8,463,615.3,497.4z">
+                </path>
+                <path
+                    d="M634.4,494c-15.5,11-35.2,17.2-60.4,17.3c-12.3,0.1-24.5,0.1-36.1,0.1c-103.7,0-185.5-0.1-246.4,26.4 c-63.5,27.7-103.7,85-130.5,185.5l-0.8-0.1c13.9-52.5,31.3-92.6,53.2-122.9c20.7-28.8,46.2-49.4,77.8-63.2 c61-26.6,142.9-26.4,246.6-26.4c11.7,0.1,23.8,0,36.1-0.1c103.8-0.2,112.9-105.6,122.5-217.2c4.7-56.9,9.9-115.5,27.5-162.4 c20-53.1,54.1-83.7,104.1-93.7l0.1,0.8c-49.5,9.8-83.5,40.3-103.3,93.1c-17.6,46.9-22.7,105.4-27.6,162 C690.1,378.2,682.9,459.6,634.4,494z">
+                </path>
+                <path
+                    d="M652.7,491.8c-17.9,12.7-40.7,17.7-69.2,15.4C328,486.2,228.3,517.5,177.2,735.2l-0.9-0.3 c25.9-110.7,64-171.6,127-204c66.6-34.2,160.2-34.6,280.3-24.7c32.2,2.6,56.9-4.1,75.4-20.5c42.1-37.4,45.1-118.6,48-204.7 c4-116.5,8.1-236.8,112.1-258.6l0.1,0.8C715.9,44.8,711.8,164.8,707.8,280.9c-3.1,86.3-5.8,167.7-48.3,205.2 C657.3,488.3,655,490.1,652.7,491.8z">
+                </path>
+                <path
+                    d="M670.6,490.3c-19.3,13.7-44.8,17.9-77.7,12.7c-138.5-21.4-227.1-13-287.3,27 c-55.4,36.8-89.1,101.7-112.4,216.9l-0.9-0.3C215.8,631,249.6,566,305.1,528.9c60.3-40.1,149.1-48.6,288.1-27.3 c35.9,5.5,63,0,82.6-16.9c43.2-37.5,42.2-124.3,40.9-216.1C714.9,151,713,28.8,809.9,7.7l0.1,0.8c-96,21.1-94.3,142.7-92.7,260.6 c1.3,92.1,2.4,179-41.1,216.7C674.3,487.4,672.6,488.9,670.6,490.3z">
+                </path>
+            </svg>
+        </figure>
+
+        <!-- SVG decoration -->
+        <div class="position-absolute top-0 end-0 mt-n3 me-n4">
+            <img src="assets/images/elements/decoration-pattern-2.svg" style="opacity:0.05;" alt="">
+        </div>
+
+        <div class="container position-relative mt-5">
+            <div class="row g-4 justify-content-between">
+
+                <!-- Widget 1 START -->
+                <div class="col-lg-3">
+                    <!-- logo -->
+                    <a class="me-0" href="index.html">
+                        <img class="light-mode-item h-40px" src="assets/images/logo.svg" alt="logo">
+                        <img class="dark-mode-item h-40px" src="assets/images/logo-light.svg" alt="logo">
+                    </a>
+
+                    <p class="mt-4 mb-2">A Bootstrap theme that's both stylish and functional, perfect for any type of
+                        technology or corporate website.</p>
+                </div>
+                <!-- Widget 1 END -->
+
+                <!-- Widget 2 START -->
+                <div class="col-lg-8 col-xxl-7">
+                    <div class="row g-4">
+                        <!-- Link block -->
+                        <div class="col-6 col-md-4">
+                            <h6 class="mb-2 mb-md-4">Quick links</h6>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link pt-0" href="#about">About us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#contact">Contact us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Sign in</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Sign up</a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <!-- Link block -->
+                        <div class="col-md-4">
+
+
+                            <!-- Social buttons -->
+                            <h6 class="mb-2 mb-md-4">Follow on</h6>
+
+                            <ul class="list-inline mb-0 mt-3">
+                                <li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light"
+                                        href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
+                                <li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light"
+                                        href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>
+                                {{-- <li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light"
+                                        href="#"><i class="fab fa-fw fa-twitter lh-base"></i></a> </li> --}}
+                                <li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light"
+                                        href="#"><i class="fab fa-fw fa-linkedin-in lh-base"></i></a> </li>
+                                <li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light"
+                                        href="#"><i class="fab fa-fw fa-youtube lh-base"></i></a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Widget 2 END -->
+            </div>
+
+            <!-- Divider -->
+            <hr class="mt-4 mb-0">
+
+            <!-- Bottom footer -->
+            <div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
+                <!-- copyright text -->
+                <div class="text-body"> Copyrights ©2024 Cherubim Bequin. Build by <a href="https://www.cheru.techkaino.com/"
+                        class="text-body text-primary-hover">Cherubim Bequin</a>. </div>
+                <!-- copyright links-->
+                <!-- Language selector -->
+                <div class="dropdown dropup text-center text-md-end mt-3 mt-md-0">
+                    <a class="dropdown-toggle btn btn-sm btn-light mb-0" href="#" role="button"
+                        id="languageSwitcher" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-globe me-2"></i>Language
+                    </a>
+                    <ul class="dropdown-menu min-w-auto" aria-labelledby="languageSwitcher">
+                        <li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2"
+                                    src="assets/images/flags/uk.svg" alt="">English</a></li>
+                        <li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2"
+                                    src="assets/images/flags/gr.svg" alt="">German </a></li>
+                        <li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2"
+                                    src="assets/images/flags/sp.svg" alt="">French</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </body>
+    </footer>
+    <!-- =======================
+Footer END -->
+
+    <!-- Back to top -->
+    <div class="back-top"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--Vendors-->
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.js"></script>
+
+    <!-- Theme Functions -->
+    <script src="assets/js/functions.js"></script>
+
+@include('sweetalert::alert')
+	
+</body>
+
 </html>

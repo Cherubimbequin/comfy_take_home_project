@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('users.layouts.app')
 
 @section('content')
     <div class="main-panel">
@@ -7,7 +7,7 @@
                 <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">All Payments</h4>
+                            <h4 class="card-title">All Transactions</h4>
                             <div class="table-responsive">
                                 {{ $dataTable->table() }}
                             </div>
