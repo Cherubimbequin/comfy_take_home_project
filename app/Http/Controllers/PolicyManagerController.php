@@ -41,57 +41,60 @@ class PolicyManagerController extends Controller
             'request_data' => $request->all(),
             'authenticated_user' => auth()->user(),
         ]);
-
+    
         $request->validate([
             'policy_number' => 'required|unique:policy_managers|max:255',
             'policy_type_id' => 'required|exists:policy_types,id',
-            'premium_amount' => 'required|numeric|min:0',
+            'premium_amount' => 'required|numeric|min:0', 
             'start_date' => 'required|date',
             'end_date' => 'required|date|after:start_date',
             'next_of_kin' => 'required',
-            'reference' => 'required|unique:payments',
+            'reference' => 'required|unique:payments', 
         ]);
-
+    
         Log::info('Validation passed', ['validated_data' => $request->all()]);
-
+    
+        // Verify payment using Paystack
         $paymentDetails = $this->verifyPayment($request->reference);
-
+    
         if (!$paymentDetails) {
             Log::error('Payment verification failed.', ['reference' => $request->reference]);
             return back()->with('error', 'Payment verification failed.');
         }
-
+    
         Log::info('Payment verification successful', ['payment_details' => $paymentDetails]);
-
+    
         if ($paymentDetails['status'] == true) {
             $result = DB::transaction(function () use ($request, $paymentDetails) {
                 try {
                     Log::info('Starting database transaction for policy creation.');
-
+    
+                    // Create Policy
                     $policy = PolicyManager::create([
                         'policy_number' => $request->policy_number,
                         'policy_type_id' => $request->policy_type_id,
-                        'premium_amount' => $request->premium_amount,
+                        'premium_amount' => $request->premium_amount, // Save in GHS
                         'start_date' => $request->start_date,
                         'end_date' => $request->end_date,
                         'next_of_kin' => $request->next_of_kin,
                         'user_id' => auth()->id(),
                         'status' => 'Active',
                     ]);
-
+    
                     Log::info('Policy created successfully.', ['policy' => $policy]);
-
+    
+                    // Log Payment
                     Payments::create([
                         'policy_id' => $policy->id,
                         'reference' => $request->reference,
-                        'amount' => $paymentDetails['amount'] / 100,
+                        'amount' => $paymentDetails['amount'] / 100, // Convert to GHS
                         'status' => $paymentDetails['status'],
                         'user_id' => auth()->id(),
                         'channel' => $paymentDetails['channel'] ?? null,
                         'currency' => $paymentDetails['currency'],
                         'paid_at' => Carbon::parse($paymentDetails['paid_at'])->format('Y-m-d H:i:s'),
                     ]);
-
+    
                     Log::info('Payment logged successfully.');
                     return $policy;
                 } catch (\Throwable $th) {
@@ -102,7 +105,7 @@ class PolicyManagerController extends Controller
                     return false;
                 }
             });
-
+    
             if ($result) {
                 Log::info('Policy creation and payment logging completed successfully.', ['policy' => $result]);
                 $this->notifyPolicyStakeholders($result);
@@ -116,6 +119,7 @@ class PolicyManagerController extends Controller
             return back()->with('error', $paymentDetails['message'] ?? 'Payment failed.');
         }
     }
+    
 
 
     private function notifyPolicyStakeholders($policy)
