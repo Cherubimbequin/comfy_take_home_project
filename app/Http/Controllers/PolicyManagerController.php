@@ -131,7 +131,7 @@ class PolicyManagerController extends Controller
             $buyer = $policy->user;
             try {
                 Log::info('Sending email to buyer.', ['email' => $buyer->email, 'policy_id' => $policy->id]);
-                Mail::to($buyer->email)->send(new PolicyPurchasedMail($buyer, $policy));
+                Mail::to($buyer->email)->queue(new PolicyPurchasedMail($buyer, $policy));
                 Log::info('Email sent to buyer successfully.', ['email' => $buyer->email]);
             } catch (\Exception $e) {
                 Log::error('Error sending email to buyer.', [
@@ -145,7 +145,7 @@ class PolicyManagerController extends Controller
             if ($policyCreator) {
                 try {
                     Log::info('Sending email to policy creator.', ['email' => $policyCreator->email]);
-                    Mail::to($policyCreator->email)->send(new PolicyCreatedNotificationMail($buyer, $policy));
+                    Mail::to($policyCreator->email)->queue(new PolicyCreatedNotificationMail($buyer, $policy));
                     Log::info('Email sent to policy creator successfully.', ['email' => $policyCreator->email]);
                 } catch (\Exception $e) {
                     Log::error('Error sending email to policy creator.', [
@@ -162,7 +162,7 @@ class PolicyManagerController extends Controller
             foreach ($adminUsers as $admin) {
                 try {
                     Log::info('Sending email to admin.', ['email' => $admin->email]);
-                    Mail::to($admin->email)->send(new AdminPolicyNotificationMail($buyer, $policy));
+                    Mail::to($admin->email)->queue(new AdminPolicyNotificationMail($buyer, $policy));
                     Log::info('Email sent to admin successfully.', ['email' => $admin->email]);
                 } catch (\Exception $e) {
                     Log::error('Error sending email to admin.', [
