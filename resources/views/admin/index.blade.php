@@ -33,8 +33,8 @@
                   <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>
                 </div>
                 <div class="ml-2">
-                  <h4 class="location font-weight-normal">Bangalore</h4>
-                  <h6 class="font-weight-normal">India</h6>
+                  <h4 class="location font-weight-normal">Accra</h4>
+                  <h6 class="font-weight-normal">Ghana</h6>
                 </div>
               </div>
             </div>
@@ -47,8 +47,7 @@
             <div class="card card-tale">
               <div class="card-body">
                 <p class="mb-4">Sold Policies</p>
-                <p class="fs-30 mb-2">4006</p>
-                <p>10.00% (30 days)</p>
+                <p class="fs-30 mb-2">{{ $policiesSoldCount}}</p>
               </div>
             </div>
           </div>
@@ -56,8 +55,7 @@
             <div class="card card-dark-blue">
               <div class="card-body">
                 <p class="mb-4">Number of Expired Policy</p>
-                <p class="fs-30 mb-2">61344</p>
-                <p>22.00% (30 days)</p>
+                <p class="fs-30 mb-2">{{ $expiredPoliciesCount }}</p>
               </div>
             </div>
           </div>
@@ -67,8 +65,7 @@
             <div class="card card-light-blue">
               <div class="card-body">
                 <p class="mb-4">Number of Agents</p>
-                <p class="fs-30 mb-2">34040</p>
-                <p>2.00% (30 days)</p>
+                <p class="fs-30 mb-2">{{ $agentsCount}}</p>
               </div>
             </div>
           </div>
@@ -76,8 +73,7 @@
             <div class="card card-light-danger">
               <div class="card-body">
                 <p class="mb-4">Number of Clients</p>
-                <p class="fs-30 mb-2">47033</p>
-                <p>0.22% (30 days)</p>
+                <p class="fs-30 mb-2">{{ $clientsCount }}</p>
               </div>
             </div>
           </div>
