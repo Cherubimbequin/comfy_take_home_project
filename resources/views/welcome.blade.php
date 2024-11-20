@@ -998,8 +998,7 @@ Footer START -->
                         <img class="dark-mode-item h-40px" src="assets/images/logo-light.svg" alt="logo">
                     </a>
 
-                    <p class="mt-4 mb-2">A Bootstrap theme that's both stylish and functional, perfect for any type of
-                        technology or corporate website.</p>
+                    <p class="mt-4 mb-2">The best Insurance Money can buy</p>
                 </div>
                 <!-- Widget 1 END -->
 
