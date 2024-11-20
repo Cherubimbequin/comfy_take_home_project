@@ -30,7 +30,7 @@
 
                                 <div class="form-group">
                                     <label for="premiumAmount">Price</label>
-                                    <input type="text" class="form-control" id="premiumAmount"
+                                    <input type="number" class="form-control" id="premiumAmount"
                                         value="GHS {{ number_format($policyType->price, 2) }}" readonly>
                                 </div>
 
