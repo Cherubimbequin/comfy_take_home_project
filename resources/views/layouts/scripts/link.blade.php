@@ -2,7 +2,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>Take Home Project</title>
+  <title>Comfy Insurance</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ asset('vendors/feather/feather.css')}}">
   <link rel="stylesheet" href="{{ asset('vendors/ti-icons/css/themify-icons.css')}}">
