@@ -21,4 +21,5 @@ This project is a Laravel-based application with the following features:
 ## **Installation Guide**
 -Normal laravel setup 
 -php artisan db:seed
-
+-php artisan queue:work
+-php artisan notify:expiring-policies
